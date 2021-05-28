@@ -27,7 +27,11 @@ public class CanseeLog implements Serializable {
     public final static int WARNING = 10003;
     public final static int ERROR = 10004;
 
-    private Long logId;
+    private Long id;
+
+    private String logId;
+
+    private String reqId;
 
     private Integer logType;
 
@@ -40,7 +44,9 @@ public class CanseeLog implements Serializable {
 
     private String logClass;
 
-    public CanseeLog(Integer logType, String logMsg, String projId, String logClass) {
+    public CanseeLog(String logId, String reqId, Integer logType, String logMsg, String projId, String logClass) {
+        this.logId = logId;
+        this.reqId = reqId;
         this.logType = logType;
         this.logMsg = logMsg;
         this.projId = projId;
